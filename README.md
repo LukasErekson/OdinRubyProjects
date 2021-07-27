@@ -1,33 +1,7 @@
-# The Odin Project Ruby Exercises
+# The Odin Project Ruby Exercises & Projects
 
 ## About this repository
 
-This repository is a complement to the Ruby course for The Odin Project. It contains a series of Ruby exercises alongside pre-written tests that will help guide the student towards a solution, providing a Test Driven Development experience.
+This repository is a complement to the Ruby course for The Odin Project. It contains my solutions to a series of Ruby exercises alongside pre-written tests that provided a Test Driven Development experience. The exercises are my own solution, and I have made sure they pass each test.
 
-## Cloning and installation
-
-Clone this repository to your local machine. To do this, click on the green "Code" button at the top right of list of files and copy the link in the prompt. Then, run the following command in your terminal:
-
-    git clone <link>
-
-This will create a folder called 'ruby-exercises' inside the directory you ran the command in.
-
-CD into that folder:
-
-    cd ruby-exercises
-
-Then run the following command:
-
-    bundle install
-
-This folder contains a Gemfile, which tells bundle which gems to install locally and makes them available for use in that directory. In this case, we are installing RSpec, which is a popular Ruby testing framework.
-
-Verify that the installation was successful by simply running the following command:
-
-    bundle exec rspec
-
-Which should print a few lines about not finding any examples. This is ok and means it's working!
-
-## Usage
-
-Each directory contains a read me with instructions for the exercises within them.
+This repository also contains some of the basic projects assigned in The Odin Project. Some, including the "Substrings" project, include tests that I have personally written before developing the solution to practice test driven development on my own. These projects represent my first foray into Ruby, and I'm proud to show my growth and abilities here.
