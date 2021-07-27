@@ -8,4 +8,4 @@ For a full description of what the specifications of this project were, [click h
 
 ## Important Take-aways
 
-For this project, I wanted to practice Test Driven Development, so I actually wrote the spec file first, before starting a solution. It was very helpfl to consider what the edge cases were and what I wanted my method to return in those cases. Having written the tests beforehand helped me to identify bugs or other features of my code (like case insensitivity) that I probably would've otherwise missed.
+For this project, I wanted to practice Test Driven Development, so I actually wrote the spec file before starting on my solution. It was very helpful to consider what the edge cases were and what I wanted my method to return in those cases. Writing the tests beforehand helped me to identify bugs or other features of my code (like case insensitivity) that I probably would've otherwise missed.
