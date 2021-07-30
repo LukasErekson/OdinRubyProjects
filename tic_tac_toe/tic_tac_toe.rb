@@ -148,13 +148,12 @@ end
 
 game_board = GameBoard.new
 
-winner_idx = play_round(game_board)
-puts "Player #{winner_idx + 1} wins! Play again?"
-user_input = gets.chomp
+user_input = ''
 
-unless %w[exit quit q no].include? user_input
+unless %w[exit quit q no].include?(user_input)
   winner_idx = play_round(game_board)
-  puts "Player #{winner_idx + 1} wins! Play again?"
+  puts "Player #{winner_idx + 1} wins! Play again?" unless winner_idx == -1
+  user_input = gets.chomp
 end
 
 puts 'Have a nice day!'
