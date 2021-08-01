@@ -39,9 +39,6 @@ class Code
 
     code_difference = ''
     @code_sequence.each_with_index do |letter, index|
-      puts letter
-      puts index
-      puts other_code.code_sequence.include?(letter)
       code_difference += if other_code.code_sequence.include?(letter)
                            if other_code.code_sequence[index] == letter
                              '√'
