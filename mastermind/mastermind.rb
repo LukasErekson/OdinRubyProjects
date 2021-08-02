@@ -39,15 +39,17 @@ class Mastermind
   # @return [guess_code]         The code corresponding to the player's guess.
   def play_turn(difficulty)
     guessed_code = player_guess
-    guess_result = guessed_code.compare_codes(@mastermind_code)
+    guess_result = nil
     if difficulty == 'easy'
+      guess_result = guessed_code.compare_codes(@mastermind_code)
       puts guess_result
     else
+      guess_result = guessed_code.compare_codes_standard(@mastermind_code)
       puts "Your Guess: \t Feedback"
-      puts "#{guessed_code} \t #{guess_result.split('').shuffle.reduce(:+)}"
+      puts "#{guessed_code} \t #{guess_result}"
     end
-    @won = true if guess_result == '√√√√'
     @turn += 1
+    @won = true if guess_result.count('√') == 4
   end
 
   # Let the player guess and validate their guess is a proper code.
@@ -55,7 +57,7 @@ class Mastermind
     puts "Turn #{@turn} - Put your guess in below:"
     begin
       guess = gets.chomp
-      guess_code = Code.new(guess)
+      guess_code = Code.new(guess.upcase)
     rescue StandardError => e
       puts e
       retry
@@ -83,7 +85,7 @@ class Mastermind
     puts 'The computer will choose a 4-color code that you will try to guess.'
     puts "The valid letters/colors are #{'R'.red}, #{'O'.light_red}, #{'Y'.yellow}, #{'G'.green}, #{'B'.blue}, #{'I'.light_blue}, and #{'V'.magenta}."
     puts 'You will get feedback from the code master after each round.'
-    puts 'The location of the feedback is random and does not necessarily correspond to your guess.'
+    puts 'The location of the feedback is random and does not necessarily correspond to locations in your guess.'
     puts 'A "√" indicates that the right color in the right place somewhere.'
     puts 'An "X" indicates there is a color that is in the code but not in the right place.'
     puts 'Finally, a "." indicates a color is not part of the code.'
