@@ -45,26 +45,28 @@ class Code
     (1..CODE_LENGTH).map { ALLOWED_PEG_VALS.sample }
   end
 
-  # Compare two codes returning a string of the difference.
+  # Compare two codes returning a string of the difference. This gives more
+  # information than the standard because it shows where the guess is right or
+  # wrong.
   #
   # @param [Code] other_code  The code to compare +self.code_sequence+ with.
   #
   # @return [String]          How well +self.code_sequence+ matches
   #                           +other_code.code_sequence+; see
   #                           Mastermind.print_codebreaker_intro_easy.
-  def compare_codes(other_code)
+  def compare_codes_easy(other_code)
     raise TypeError("Other code must be of Code type, not #{other_code.class}.") unless other_code.instance_of?(Code)
 
     code_difference = ''
     @code_sequence.each_with_index do |letter, index|
       code_difference += if other_code.code_sequence.include?(letter)
                            if other_code.code_sequence[index] == letter
-                             '√'
+                             '√'.light_green
                            else
-                             'X'
+                             'X'.light_yellow
                            end
                          else
-                           '.'
+                           '.'.light_magenta
                          end
     end
     code_difference

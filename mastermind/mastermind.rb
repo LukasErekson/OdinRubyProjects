@@ -41,7 +41,7 @@ class Mastermind
     guessed_code = player_guess
     guess_result = nil
     if difficulty == 'easy'
-      guess_result = guessed_code.compare_codes(@mastermind_code)
+      guess_result = guessed_code.compare_codes_easy(@mastermind_code)
       puts guess_result
     else
       guess_result = guessed_code.compare_codes_standard(@mastermind_code)
