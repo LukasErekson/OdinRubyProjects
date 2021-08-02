@@ -7,8 +7,8 @@ require_relative 'code_error'
 class Code
   ALLOWED_PEG_VALS = %w[R O Y G B I V].freeze
   CODE_LENGTH = 4
-  STR_TO_COLOR_HASH = {R: 'R'.red, O: 'O'.light_red, Y: 'Y'.yellow, G: 'G'.green,
-                       B: 'B'.blue, I: 'I'.light_blue, V: 'V'.magenta}.freeze
+  STR_TO_COLOR_HASH = { R: 'R'.red, O: 'O'.light_red, Y: 'Y'.yellow, G: 'G'.green,
+                        B: 'B'.blue, I: 'I'.light_blue, V: 'V'.magenta }.freeze
   attr_reader :code_sequence, :color_to_freq
 
   # Validate teh given code_sequence or generate one.
@@ -31,9 +31,8 @@ class Code
     else
       raise CodeError.new(CODE_LENGTH, ALLOWED_PEG_VALS)
     end
-    @color_to_freq = @code_sequence.reduce(Hash.new(0)) do |hash, color|
+    @color_to_freq = @code_sequence.each_with_object(Hash.new(0)) do |color, hash|
       hash[color.to_sym] = @code_sequence.count(color)
-      hash
     end
   end
 
