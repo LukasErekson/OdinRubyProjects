@@ -11,7 +11,7 @@ class Code
                         B: 'B'.blue, I: 'I'.light_blue, V: 'V'.magenta }.freeze
   attr_reader :code_sequence, :color_to_freq
 
-  # Validate teh given code_sequence or generate one.
+  # Validate the given code_sequence or generate one.
   #
   # @param [String] code_sequence  The proposed code_sequence.
   #
