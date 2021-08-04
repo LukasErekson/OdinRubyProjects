@@ -22,7 +22,7 @@ loop do
   when '2', 'standard'
     mastermind_game.play_codebreaker('standard')
   when '3', 'codemaker'
-    puts 'Coming soon!'
+    mastermind_game.play_codemaker
   when '4', 'q', 'quit', 'exit'
     puts 'Thank you for playing! Have a nice day.'
     break

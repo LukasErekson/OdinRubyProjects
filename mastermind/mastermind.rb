@@ -3,6 +3,7 @@
 require 'colorize'
 require_relative 'code_error'
 require_relative 'code'
+require_relative 'simple-ai'
 
 # Mastermind game class
 class Mastermind
@@ -28,10 +29,62 @@ class Mastermind
 
       play_turn(difficulty)
     end
-    end_game
+    end_game_codebreaker
+  end
+
+  # Play Mastermind as the codemaker with the computer guessing.
+  def play_codemaker
+    @mastermind_code = get_player_code
+    # Set up the player to win if the loop terminates wihtout a
+    # correct guess.
+    @win = true
+    # Start out with a recommended guess
+    @computer_ai = SimpleAI.new('RROO')
+    NUM_TURNS_HARD.times do
+      sleep(0.5) # Add time to make it more suspenseful
+      if computer_play_turn
+        @win = false
+        break
+      end
+    end
+    end_game_codemaker
   end
 
   protected
+
+  # Ask for a valid code from the player.
+  #
+  # @return [Code] player_code A valid code given by the player.
+  def get_player_code
+    puts 'Codemaker, please put in a valid code:'
+    puts "The valid letters/colors are #{'R'.red}, #{'O'.light_red}, #{'Y'.yellow}, #{'G'.green}, #{'B'.blue}, #{'I'.light_blue}, and #{'V'.magenta}."
+    puts 'Your code should be 4 characters long.'
+    begin
+      player_code = gets.chomp
+      player_code = Code.new(player_code.upcase)
+    rescue StandardError => e
+      puts e
+      retry
+    end
+    player_code
+  end
+
+  # Has the computer guess a round of what the code should be.
+  # This implements an algorithm by Donald Knuth, which can be found
+  # on wikipedia: https://en.wikipedia.org/wiki/Mastermind_(board_game)#Worst_case:_Five-guess_algorithm
+  # @return [Boolean] Whether the computer guessed correctly or not.
+  def computer_play_turn
+    puts "Turn #{@turn}:"
+    guess_result = @computer_ai.guess.compare_codes_standard(@mastermind_code)
+    puts "Computer's Guess \t Feedback"
+    puts "#{@computer_ai.guess} \t #{guess_result}"
+    return true if guess_result.count('√') == 4
+
+    # It was incorrect so eliminate codes as per the algorithm.
+    @computer_ai.eliminate_codes(guess_result)
+    @turn += 1
+    false
+  end
 
   # Play a turn of mastermind as the codebreaker.
   # @param [String] difficulty  What difficuly of the game.
@@ -93,12 +146,26 @@ class Mastermind
     puts ''
   end
 
-  # Ends the game whether the player won or lost.
-  def end_game
+  # Ends the game whether the player won or lost as the codebreaker
+  def end_game_codebreaker
     if @won
       puts 'Congratulations! You win!'
     else
       puts "Better luck next time! The code was #{@mastermind_code}."
     end
+    # Give some time for the player's response
+    sleep(1)
+  end
+
+  # Ends the game whether the player won or lost as the codemaker.
+  def end_game_codemaker
+    if @won
+      puts 'Congratulations! You chose a really difficult code!'
+    else
+      puts 'Better luck next time!'
+      puts "The computer was able to guess #{@mastermind_code} in #{@turn} turn#{@turn == 1 ? '' : 's'}."
+    end
+    # Give some time for the player's response
+    sleep(1)
   end
 end
