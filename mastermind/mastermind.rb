@@ -9,9 +9,17 @@ require_relative 'simple-ai'
 class Mastermind
   NUM_TURNS_EASY = 6
   NUM_TURNS_HARD = 12
+  attr_accessor :player_score, :computer_score
 
   # Set @turn and @won class variables.
   def initialize
+    new_game
+    @player_score = 0
+    @computer_score = 0
+  end
+
+  # Reset game variables @turn and @won.
+  def new_game
     @turn = 1
     @won = false
   end
@@ -25,6 +33,7 @@ class Mastermind
     @mastermind_code = Code.new
     num_turns = difficulty == 'easy' ? NUM_TURNS_EASY : NUM_TURNS_HARD
     num_turns.times do
+      @computer_score += 1
       break if @won
 
       play_turn(difficulty)
@@ -41,6 +50,7 @@ class Mastermind
     # Start out with a recommended guess
     @computer_ai = SimpleAI.new('RROO')
     NUM_TURNS_HARD.times do
+      @player_score += 1
       sleep(0.5) # Add time to make it more suspenseful
       if computer_play_turn
         @win = false
@@ -48,6 +58,11 @@ class Mastermind
       end
     end
     end_game_codemaker
+  end
+
+  # Print the player's and the computer's scores.
+  def print_score
+    puts "Player Score: #{@player_score}\tComputer Score: #{@computer_score}"
   end
 
   protected
@@ -152,6 +167,7 @@ class Mastermind
       puts 'Congratulations! You win!'
     else
       puts "Better luck next time! The code was #{@mastermind_code}."
+      @computer_score += 1
     end
     # Give some time for the player's response
     sleep(1)
@@ -161,6 +177,7 @@ class Mastermind
   def end_game_codemaker
     if @won
       puts 'Congratulations! You chose a really difficult code!'
+      @player_score += 1
     else
       puts 'Better luck next time!'
       puts "The computer was able to guess #{@mastermind_code} in #{@turn} turn#{@turn == 1 ? '' : 's'}."

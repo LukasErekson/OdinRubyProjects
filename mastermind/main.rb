@@ -2,6 +2,8 @@
 
 require_relative 'mastermind'
 
+mastermind_game = Mastermind.new
+
 loop do
   puts ''
   puts 'Welcome to Mastermind for Ruby!'
@@ -12,7 +14,9 @@ loop do
   puts '4. Quit [q, quit, exit]'
   puts ''
 
-  mastermind_game = Mastermind.new
+  mastermind_game.new_game
+
+  mastermind_game.print_score
 
   player_response = gets.chomp.downcase
 
@@ -27,6 +31,6 @@ loop do
     puts 'Thank you for playing! Have a nice day.'
     break
   else
-    puts 'Please chooseone of the options outlined above.'
+    puts 'Please choose one of the options outlined above.'
   end
 end
