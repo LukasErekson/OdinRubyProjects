@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'colorize'
-require_relative 'code_error'
+require_relative 'code-error'
 require_relative 'code'
 require_relative 'simple-ai'
 
