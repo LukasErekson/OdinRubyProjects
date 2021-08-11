@@ -12,7 +12,6 @@ class GameDisplay
     # The current game loaded to be played.
     @current_game = HangmanGame.new
     # The hash of valid save files. Used when loading files.
-    @save_game_hash = {}
     populate_save_hash
 
     # Whether or not the game was saved and therefore the loop should break.
@@ -48,7 +47,11 @@ class GameDisplay
     when 'lose'
       puts "Unfortunately, you lost. The word was #{@current_game.reveal_target_word}."
     end
-    # Close the file after saving, game is not over.
+    # Delete save file at game over to avoid cheating or clutter.
+    unless @current_game.game_over == 'save'
+      File.delete("saves/#{@current_game.file_name}.yaml") 
+      populate_save_hash
+    end
   end
 
   ##
@@ -110,6 +113,8 @@ class GameDisplay
     player_input = gets.chomp
     filename = @save_game_hash[player_input.to_i] || player_input
     @current_game = YAML.load(File.open("saves/#{filename}.yaml", 'r'))
+    # Set filename for proper deletion at the end.
+    @current_game.file_name = filename
   rescue StandardError
     puts "saves/#{filename}.yaml doesn't exist" unless File.exist? "saves/#{filename}/yaml"
 
@@ -126,6 +131,8 @@ class GameDisplay
   ##
   # Create a hash of valid save files with corresponding values
   def populate_save_hash
+    # Reset the hash before repopulating
+    @save_game_hash = {}
     Dir.glob('./saves/*').each_with_index do |name, idx|
       @save_game_hash[idx + 1] = name[8...-5]
     end

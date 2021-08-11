@@ -5,9 +5,8 @@
 class HangmanGame
   # The lcoation of the word bank from which to choose the target word.
   WORD_BANK_FNAME = '5desk.txt'
-  attr_reader :output_str, :correct_letters, :incorrect_letters,\
-              :num_fails_left, :file_name
-  attr_accessor :game_over
+  attr_reader :output_str, :correct_letters, :incorrect_letters, :num_fails_left 
+  attr_accessor :game_over, :file_name
 
   ##
   # Start a new game with an optional file name, potentially loading a
