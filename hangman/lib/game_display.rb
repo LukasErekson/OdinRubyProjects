@@ -14,15 +14,18 @@ class GameDisplay
     # The hash of valid save files. Used when loading files.
     @save_game_hash = {}
     populate_save_hash
+
+    # Whether or not the game was saved and therefore the loop should break.
+    @game_saved = false
   end
 
   ##
   # Play the current game loaded into the display.
   def play_current_game
-    until @current_game.win || @current_game.lose
+    until @current_game.win_or_lose?
       print_display
       player_input
-      @current_game.win_or_lose?
+      break if @current_game.win_or_lose?
     end
     end_current_game
   end
@@ -38,11 +41,14 @@ class GameDisplay
   ##
   # End the current game and show the proper ending
   def end_current_game
-    if @current_game.win
+    case @current_game.game_over
+    when 'win'
       puts 'Congratulations! You won!'
-    else
+      puts "The word was #{@current_game.reveal_target_word}."
+    when 'lose'
       puts "Unfortunately, you lost. The word was #{@current_game.reveal_target_word}."
     end
+    # Close the file after saving, game is not over.
   end
 
   ##
@@ -56,6 +62,8 @@ class GameDisplay
       @current_game.guess_letter(input_string)
     elsif input_string.include?('SAVE') || input_string.include?('QUIT')
       save_game
+      # Set game_over to break the main loop.
+      @current_game.game_over = 'save'
     else
       raise StandardError('Invalid input')
     end
@@ -78,6 +86,9 @@ class GameDisplay
       raise StandardError('Invalid Response.') unless response == 'Y'
     end
     write_to_file filename
+    # Indicate the loop should break and store the new file in the hash.
+    @game_saved = true
+    populate_save_hash
   rescue StandardError
     retry
   end

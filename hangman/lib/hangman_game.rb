@@ -6,28 +6,28 @@ class HangmanGame
   # The lcoation of the word bank from which to choose the target word.
   WORD_BANK_FNAME = '5desk.txt'
   attr_reader :output_str, :correct_letters, :incorrect_letters,\
-              :num_fails_left, :win, :lose
+              :num_fails_left, :file_name
+  attr_accessor :game_over
 
   ##
-  # Start a new game with an optional player name, potentially loading a
+  # Start a new game with an optional file name, potentially loading a
   # save file to initialize the variables.
-  def initialize(player_name = 'Player')
+  def initialize(file_name = '')
     # The letters a player has guessed that are in the target word.
     @correct_letters = []
     # The letters a player has guessed that are not in the target word.
     @incorrect_letters = []
     # The word the player is trying to guess.
     @target_word = choose_target_word
-    # The name of the player (optional parameter)
-    @player_name = player_name
+    # The name of the file (optional parameter)
+    # TODO : When the game ends, uses the file name to delete any saved file.
+    @file_name = file_name
     # The string to display to give the player feedback.
     @output_str = '_ ' * @target_word.length
     # The number of guesses the player has left
     @num_fails_left = 8
-    # Whether the player has won or not
-    @win = false
-    # Whether the player has lost (run out of guesses without guessing the word)
-    @lose = false
+    # Whether the game has ended or not, and what the outcome was.
+    @game_over = nil
   end
 
   ##
@@ -59,14 +59,18 @@ class HangmanGame
   ##
   # Check whether the player has won or lost the game.
   def win_or_lose?
-    @win = @output_str.count('_').zero?
-    @lose = true if @num_fails_left.zero? && !@win
+    if @output_str.count('_').zero?
+      @game_over =  'win'
+    elsif @num_fails_left.zero?
+      @game_over = 'lose'
+    end
+    @game_over
   end
 
   ##
   # Reveal the target word only if the player has lost the game.
   def reveal_target_word
-    return @target_word if @lose
+    return @target_word if @game_over
   end
 
   protected
