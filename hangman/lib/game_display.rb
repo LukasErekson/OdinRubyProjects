@@ -49,9 +49,10 @@ class GameDisplay
     end
     # Delete save file at game over to avoid cheating or clutter.
     unless @current_game.game_over == 'save'
-      File.delete("saves/#{@current_game.file_name}.yaml") 
+      File.delete("saves/#{@current_game.file_name}.yaml") if File.exist?("saves/#{@current_game.file_name}.yaml")
       populate_save_hash
     end
+    @current_game = HangmanGame.new
   end
 
   ##
