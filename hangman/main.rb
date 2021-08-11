@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'game_display'
+require_relative './lib/game_display'
 
 ##
 # Print the valid options for the main menu.
