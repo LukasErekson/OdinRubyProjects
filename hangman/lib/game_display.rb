@@ -61,6 +61,7 @@ class GameDisplay
   #
   # If given an invalid input, prompt the player until a valid input is given.
   def player_input
+    puts 'Guess a letter or write "save" or "quit".'
     input_string = gets.chomp.upcase
     if input_string.length == 1
       @current_game.guess_letter(input_string)
