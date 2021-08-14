@@ -59,11 +59,77 @@ module Enumerable
   def my_all?(&block)
     return true unless block_given?
 
-    
+    # Return false as early as possible
+    my_each { |*args| return false unless block.call(*args) }
 
-    return self.my_select(&block) == self
+    true
   end
 
   ##
   # Replicates the behavior of Enumerable.any?
+  def my_any?(&block)
+    return false unless block_given?
+
+    # Return true on first instance
+    my_each { |*args| return true if block.call(*args) }
+
+    false
+  end
+
+  ##
+  # Replicates the behavior of Enumerable.none?
+  def my_none?(&block)
+    return true unless block_given?
+
+    # Exit with false as early as possible.
+    my_each { |*args| return false if block.call(*args) }
+
+    true
+  end
+
+  ##
+  # Replicates the behavior of Enumerable.count
+  def my_count(&block)
+    return 0 unless block_given?
+
+    counter = 0
+
+    my_each { |*args| counter += 1 if block.call(*args) }
+
+    counter
+  end
+
+  ##
+  # Replicates the behavior of Enumerable.map
+  def my_map(optional_proc = nil, &block)
+    # Accept either a block or a proc
+    if optional_proc.nil?
+      return to_enum(:my_map) unless block_given?
+    else
+      block = optional_proc
+    end
+
+    result = []
+    my_each { |*args| result.push(block.call(*args)) }
+
+    result
+  end
+
+  ##
+  # Replicates the behavior of Enumerable.inject
+  def my_inject(initial_value = nil, &block)
+    raise StandardError('no block given') unless block_given?
+
+    accumulator = initial_value
+
+    my_each do |*args|
+      if accumulator.nil
+        accumulator = sfirst
+        next
+      end
+      accumulator = block.call(accumulator, *args)
+    end
+
+    accumulator
+  end
 end
