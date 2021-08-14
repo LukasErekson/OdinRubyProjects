@@ -124,7 +124,7 @@ module Enumerable
 
     my_each do |*args|
       if accumulator.nil
-        accumulator = sfirst
+        accumulator = first
         next
       end
       accumulator = block.call(accumulator, *args)
