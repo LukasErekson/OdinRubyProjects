@@ -25,6 +25,9 @@ def fibs_rec(idx)
   # Base case: the fibonacci number equals its index
   return idx if [0, 1].include?(idx)
 
+  # Edge case (negative input)
+  return 0 if idx.negative?
+
   fibs_rec(idx - 1) + fibs_rec(idx - 2)
 end
 
@@ -33,15 +36,15 @@ end
 
 # +arr1+:: The first array to sort.
 # +arr2+:: the second sorted array to merge.
-def merge_sorted_arrays(_arr1, _arr2)
+def merge_sorted_arrays(arr1, arr2)
   sorted_arr = []
-  until left_sorted.empty? && right_sorted.empty?
-    if left_sorted[0].nil? || right_sorted[0].nil?
-      sorted_arr.append left_sorted.shift || right_sorted.shift
-    elsif left_sorted[0] < right_sorted[0]
-      sorted_arr.append left_sorted.shift
+  until arr1.empty? && arr2.empty?
+    if arr1[0].nil? || arr2[0].nil?
+      sorted_arr.append arr1.shift || arr2.shift
+    elsif arr1[0] < arr2[0]
+      sorted_arr.append arr1.shift
     else
-      sorted_arr.append right_sorted.shift
+      sorted_arr.append arr2.shift
     end
   end
   sorted_arr
@@ -53,12 +56,12 @@ end
 # +arr+:: The array to sort.
 def mergesort(arr)
   # Base case: Arrays of length 1 are sorted.
-  return arr if arr.length == 1
+  return arr if arr.length <= 1
 
-  left_sorted = mergesort(arr[0...arr.length / 2])
+  arr1 = mergesort(arr[0...arr.length / 2])
 
-  right_sorted = mergesort(arr[arr.length / 2..])
+  arr2 = mergesort(arr[arr.length / 2..])
 
   # Merge and return sorted arrays
-  merge_sorted_arrays(left_sorted, right_sorted)
+  merge_sorted_arrays(arr1, arr2)
 end
