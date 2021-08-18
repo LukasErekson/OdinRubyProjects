@@ -219,4 +219,110 @@ RSpec.describe 'Custom Enumerable Methods' do
       end
     end
   end
+
+  describe '5.#my_any? method' do
+    context 'Example structures' do
+      it 'Integer array' do
+        criterion = ->(num) { num > 2 }
+        shared_block = proc { |num| criterion.call(num) }
+        expected_output = num_array.any?(&shared_block)
+        expect(num_array.my_any?(&shared_block)).to eq(expected_output)
+      end
+
+      it 'String array' do
+        criterion = ->(str) { str.length < 2 }
+        shared_block = proc { |str| criterion.call(str) }
+        expected_output = str_array.any?(&shared_block)
+        expect(str_array.my_any?(&shared_block)).to eq(expected_output)
+      end
+
+      it 'Hash' do
+        criterion = ->(key, _val) { key.is_a? String }
+        shared_block = proc { |key, val| criterion.call(key, val) }
+        expected_output = hash.any?(&shared_block)
+        expect(hash.my_any?(&shared_block)).to eq(expected_output)
+      end
+    end
+
+    context 'Edge cases:' do
+      it 'Empty arrays return false' do
+        select_criterion = ->(val) { val.nil? }
+        expected_output = [].any? { |val| select_criterion.call(val) }
+        expect([].my_any? { |val| select_criterion.call(val) }).to eq(expected_output)
+      end
+
+      it 'Empty hashes return false' do
+        select_criterion = ->(_key, val) { val.nil? }
+        expected_output = {}.any? { |key, val| select_criterion.call(key, val) }
+        expect({}.my_any? { |key, val| select_criterion.call(key, val) }).to eq(expected_output)
+      end
+    end
+
+    context 'Nested structures:' do
+      it 'Nested arrays' do
+        select_criterion = ->(val) { val.length > 2 }
+        expected_output = nested_array.any? { |val| select_criterion.call(val) }
+        expect(nested_array.my_any? { |val| select_criterion.call(val) }).to eq(expected_output)
+      end
+
+      it 'Nested hashes' do
+        select_criterion = ->(_key, val) { val.length > 2 }
+        expected_output = nested_hash.any? { |key, val| select_criterion.call(key, val) }
+        expect(nested_hash.my_any? { |key, val| select_criterion.call(key, val) }).to eq(expected_output)
+      end
+    end
+  end
+
+  describe '5.#my_none? method' do
+    context 'Example structures' do
+      it 'Integer array' do
+        criterion = ->(num) { num <= 2 }
+        shared_block = proc { |num| criterion.call(num) }
+        expected_output = num_array.none?(&shared_block)
+        expect(num_array.my_none?(&shared_block)).to eq(expected_output)
+      end
+
+      it 'String array' do
+        criterion = ->(str) { str.length < 2 }
+        shared_block = proc { |str| criterion.call(str) }
+        expected_output = str_array.none?(&shared_block)
+        expect(str_array.my_none?(&shared_block)).to eq(expected_output)
+      end
+
+      it 'Hash' do
+        criterion = ->(key, _val) { key.is_a? String }
+        shared_block = proc { |key, val| criterion.call(key, val) }
+        expected_output = hash.none?(&shared_block)
+        expect(hash.my_none?(&shared_block)).to eq(expected_output)
+      end
+    end
+
+    context 'Edge cases:' do
+      it 'Empty arrays return true' do
+        select_criterion = ->(val) { val.nil? }
+        expected_output = [].none? { |val| select_criterion.call(val) }
+        expect([].my_none? { |val| select_criterion.call(val) }).to eq(expected_output)
+      end
+
+      it 'Empty hashes return true' do
+        select_criterion = ->(_key, val) { val.nil? }
+        expected_output = {}.none? { |key, val| select_criterion.call(key, val) }
+        expect({}.my_none? { |key, val| select_criterion.call(key, val) }).to eq(expected_output)
+      end
+    end
+
+    context 'Nested structures:' do
+      it 'Nested arrays' do
+        select_criterion = ->(val) { val.length > 2 }
+        expected_output = nested_array.none? { |val| select_criterion.call(val) }
+        expect(nested_array.my_none? { |val| select_criterion.call(val) }).to eq(expected_output)
+      end
+
+      it 'Nested hashes' do
+        select_criterion = ->(_key, val) { val.length > 2 }
+        expected_output = nested_hash.none? { |key, val| select_criterion.call(key, val) }
+        expect(nested_hash.my_none? { |key, val| select_criterion.call(key, val) }).to eq(expected_output)
+      end
+    end
+  end
 end
