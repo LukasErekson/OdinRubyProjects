@@ -17,15 +17,17 @@
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-danger" id="top-nav-bar">
       <div class="container-fluid">
-        <a href="https://github.com/lukaserekson" target="_blank" class="navbar-brand navbar-light"><img src="images/GitHub-Mark-Light.png" style="width: 30px"> Lukas Erekson </a>
+        <a href="https://github.com/lukaserekson" target="_blank" class="navbar-brand navbar-light">
+          <img src="images/GitHub-Mark-Light.png?raw=true" style="width: 30px"> Lukas Erekson 
+        </a>
 
-        <button class="navbar-toggler" type="button" aria-label="Toggle navigation" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
+        <button class="navbar-toggler" type="button" aria-label="toggle navigation" data-bs-toggle="collapse" data-bs-target="#navbarLinks">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarLinks">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
+              <a class="nav-link active" href="#intro">Intro</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#user-input">
@@ -33,8 +35,8 @@
             </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#test-driven-dev">
-              Unit Tests & Test Driven Development
+              <a class="nav-link" href="#unit-tests">
+              Unit Tests & Test-Driven Development
             </a>
             </li>
             <li class="nav-item">
@@ -50,15 +52,16 @@
     </nav>
 
     <content>
+      <span id="intro"></span>
       <header class="container">
-        <div class="row">        
+        <div class="row align-items-center justify-content-center">        
           <div class="col-9">
             <h1>Ruby Projects</h1>
             <h4>Ruby exercise solutions and projects from The Odin Project</h4>
           </div>
        
-        <div class="col-3 justify-content-between">
-          <img src="images/ruby.png" alt="Ruby Logo" style="height:8rem;" />
+        <div class="col-3">
+          <img id="ruby-logo" src="images/ruby.png?raw=true" alt="Ruby Logo" style="height:7rem;" />
         </div>
         </div>
       </header>
@@ -71,7 +74,7 @@
             </p>
 
             <p>
-              The pages on this website will primarily focus on the important concepts I learned during the projects rather than the projects themselves. If you're interested in understanding the initial requirements for the project, specific links will be provided. on each project page.
+              The pages on this website will primarily focus on the important concepts I learned during the projects rather than the projects themselves. If you're interested in understanding the initial requirements for the project, specific links will be provided on each project page.
             </p>
 
             <p>
@@ -81,15 +84,59 @@
           </div>
         </div>
       </div>
+      
+      <div class="container" id="user-input">
+        <header>
+          <h1>User Input & Serialization</h1>
+          <h5>Creating games to play in the terminal</h5>
+        </header>
+        
+        <p>
+          Several of the early projects in The Odin Project are simple games meant to be played in the terminal. This lent itself well to learning and applying the syntax for parsing user input and saving files. Three games that I feel I implemented really well are Hangman, Tic-Tac-Toe, and Mastermind. The source code for each of these games as well as a playable version online are available as replit.io repositories.
+        </p>
+        
+        <p>
+          Of the three, Mastermind is my favorite. I was able to use a gem that allowed for colored output, and I feel like I handled errors and exceptions well. I also implemented a basic algorithm that allows the player to input a code and the computer to "guess" their code. More details about the algorithm implementation is <a href="#data-structures">available below</a>. Feel free to play a couple of rounds of the game by <a href="">clicking here</a>.
+        </p>
+        
+      </div>
+
+      <div class="container" id="unit-tests">
+        <header>
+          
+          <h1>Unit Tests & Test-Driven Development</h1>
+          <h5>Learning RSpec to verify solutions and drive development</h5>
+        </header>
+        
+        <p>
+          Using the spec files provided for the exercises and looking up the documentation, I started to create RSpec test files for most of the projects. I wanted to practice writing unit tests and try RSpec's "behavior driven development" methodology. My previous experience with Python during my undergraduate research (see <a href="">Rootfinding</a>) instilled in me the importance of creating and using unit tests. I created my own unit tests for Substrings, Stock Picker, Bubble Sort, Custom Enumerable, the Recursion exercises, and Linked List.
+        </p>
+        
+        <p>
+          Out of them all, I'm most proud of the work I did with Linked List. It was the first project that I really implemented what I knew of Test-Driven Development. I wrote out the spec file that tested for the specific behaviors and outputs for my <tt>LinkedList</tt> class before implementing any of the methods. Doing so gave me not only a clear end-goal, but it also helped me identify errors when handling the edge cases that I may not have caught otherwise. Additionally, I started to learn a little bit about generating documentation using RDoc. You can find the source code for the classes and the spec files <a href="https://github.com/LukasErekson/OdinRubyProjects/tree/main/linked_list">by clicking here</a>. If you're interested in browsing the generated documentation, that can be found <a href="">here</a>.
+        </p>
+      </div>
+      
+      <div class="container" id="data-structures">
+        <header>
+          <h1>Data Structures & Algorithms</h1>
+          <h5>Implementing algorithms - from psuedo code to Ruby</h5>
+        </header>
+      </div>
+      
     </content>
   
 
   <footer class="mt-auto">
     <hr />
-    <p>Lukas Erekson 2021 Built with Bootstrap.</p>
+    <p>Lukas Erekson 2021 | Built with Bootstrap</p>
 
     
   </footer>
   </body>
+  <script src="scripts/active_nav.js">
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  
+  
 </html>
