@@ -76,23 +76,21 @@ class Tree
       current_node.left = delete(value, current_node.left)
     elsif value > current_node.value
       current_node.right = delete(value, current_node.right)
-    else # equality
-      if current_node.left.nil?
-        temp = current_node.right
-        current_node = nil
-        return temp
+    elsif current_node.left.nil? # equality
+      temp = current_node.right
+      current_node = nil
+      return temp
 
-      elsif current_node.right.nil?
-        temp = current_node.left
-        current_node = nil
-        return temp
+    elsif current_node.right.nil?
+      temp = current_node.left
+      current_node = nil
+      return temp
 
-      else # Node has 2 children.
-        successor = find_inorder_successor(current_node.right)
-        current_node.value = successor.value
+    else # Node has 2 children.
+      successor = find_inorder_successor(current_node.right)
+      current_node.value = successor.value
 
-        current_node.right = delete(successor.value, current_node.right)
-      end
+      current_node.right = delete(successor.value, current_node.right)
     end
     current_node
   end
@@ -143,7 +141,7 @@ class Tree
   #
   # +sought_node+::  The node to find the depth of.
   # +current_node+:: The current node in the breadth first search.
-  def depth(sought_node, current_node =  @root)
+  def depth(sought_node, current_node = @root)
     # Base case we've reached beyond a leaf node.
     return -1 if current_node.nil?
 
@@ -169,7 +167,7 @@ class Tree
     # Short-circut if already balanced.
     return @root if balanced?
 
-    @root = build_tree(self.inorder)
+    @root = build_tree(inorder)
   end
 
   ##
