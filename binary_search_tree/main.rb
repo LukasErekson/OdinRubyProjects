@@ -20,9 +20,7 @@ puts "Postorder: #{my_tree.postorder}"
 puts 'Adding more elements to unbalance it'
 
 15.times do
-  # Add 15 unique elements
-  next until my_tree.insert(rand(101..1000))
-
+  my_tree.insert(rand(101..1000))
 end
 
 puts my_tree
