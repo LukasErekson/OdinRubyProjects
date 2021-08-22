@@ -20,7 +20,7 @@ class Node
   end
 
   ##
-  # Compares nodesbased on their value
+  # Compares nodes based on their value
   #
   # +other+:: The other node to compare values.
   def <=>(other)
@@ -37,8 +37,6 @@ class Node
 
   ##
   # Assigns the right child unless +other+ is not a Node object or nil.
-  #
-  # +other:: The value to
   def right=(other)
     raise TypeError, 'Right must be a node or nil.' unless other.is_a?(Node) || other.nil?
 

@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Tree - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-balanced-3F">#balanced?</a>
+    
+    <li ><a href="#method-i-build_tree">#build_tree</a>
+    
+    <li ><a href="#method-i-delete">#delete</a>
+    
+    <li ><a href="#method-i-depth">#depth</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-find">#find</a>
+    
+    <li ><a href="#method-i-find_inorder_successor">#find_inorder_successor</a>
+    
+    <li ><a href="#method-i-height">#height</a>
+    
+    <li ><a href="#method-i-inorder">#inorder</a>
+    
+    <li ><a href="#method-i-inorder_traverse">#inorder_traverse</a>
+    
+    <li ><a href="#method-i-insert">#insert</a>
+    
+    <li ><a href="#method-i-level_order">#level_order</a>
+    
+    <li ><a href="#method-i-level_order_iter">#level_order_iter</a>
+    
+    <li ><a href="#method-i-level_order_rec">#level_order_rec</a>
+    
+    <li ><a href="#method-i-postorder">#postorder</a>
+    
+    <li ><a href="#method-i-postorder_traverse">#postorder_traverse</a>
+    
+    <li ><a href="#method-i-preorder">#preorder</a>
+    
+    <li ><a href="#method-i-preorder_traverse">#preorder_traverse</a>
+    
+    <li ><a href="#method-i-pretty_print">#pretty_print</a>
+    
+    <li ><a href="#method-i-rebalance">#rebalance</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Tree">
+  <h1 id="class-Tree" class="class">
+    class Tree
+  </h1>
+
+  <section class="description">
+    
+<p>Binary Search <a href="Tree.html"><code>Tree</code></a> class</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-root" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">root</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(array = [], sorted = false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes a new Binary Search <a href="Tree.html"><code>Tree</code></a> with values from <code>array</code>.</p>
+<dl class="rdoc-list note-list"><dt><code>array</code>
+<dd>
+<p>The array containing the values for the tree.</p>
+</dd><dt><code>_sorted</code>
+<dd>
+<p>Whether or not the array is sorted.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">array</span> = [], <span class="ruby-identifier">sorted</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&#39;Tree requires an array to initialize.&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+
+  <span class="ruby-comment"># Extract unique elements for sorting</span>
+  <span class="ruby-identifier">build_array</span> = <span class="ruby-identifier">array</span>.<span class="ruby-identifier">uniq</span>
+
+  <span class="ruby-comment"># Requires a sorted array to properly build the tree.</span>
+  <span class="ruby-identifier">build_array</span>.<span class="ruby-identifier">sort!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sorted</span>
+
+  <span class="ruby-ivar">@root</span> = <span class="ruby-identifier">build_tree</span>(<span class="ruby-identifier">build_array</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-balanced-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">balanced?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns whether the tree is balanced or not. To be balanced, the difference of the heghts between each left and right subtree of every noide is not more than 1.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="balanced-3F-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">balanced?</span>
+  (<span class="ruby-identifier">height</span>(<span class="ruby-ivar">@root</span>.<span class="ruby-identifier">left</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">height</span>(<span class="ruby-identifier">root</span>.<span class="ruby-identifier">right</span>)).<span class="ruby-identifier">between?</span>(<span class="ruby-value">-1</span>, <span class="ruby-value">1</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(value, current_node = @root)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes the node with <code>value</code> passed in. Returns <code>true</code> if it was successfully removed, <code>false</code> if no such node exists.</p>
+<dl class="rdoc-list note-list"><dt><code>value</code>
+<dd>
+<p>The value sought after to delete.</p>
+</dd><dt><code>current_node</code>
+<dd>
+<p>The current node the method is looking at.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span> = <span class="ruby-ivar">@root</span>)
+  <span class="ruby-comment"># Base case: We did not find the node</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">current_node</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span> = <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span> = <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># equality</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">temp</span> = <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>
+      <span class="ruby-identifier">current_node</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">temp</span>
+
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">temp</span> = <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>
+      <span class="ruby-identifier">current_node</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">temp</span>
+
+    <span class="ruby-keyword">else</span> <span class="ruby-comment"># Node has 2 children.</span>
+      <span class="ruby-identifier">successor</span> = <span class="ruby-identifier">find_inorder_successor</span>(<span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)
+      <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">value</span> = <span class="ruby-identifier">successor</span>.<span class="ruby-identifier">value</span>
+
+      <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span> = <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">successor</span>.<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">current_node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-depth" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">depth</span><span
+            class="method-args">(sought_node, current_node = @root)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the depth of <code>node</code>, or the number of edges in the path from <code>node</code> to the <code>root</code>.</p>
+<dl class="rdoc-list note-list"><dt><code>sought_node</code>
+<dd>
+<p>The node to find the depth of.</p>
+</dd><dt><code>current_node</code>
+<dd>
+<p>The current node in the breadth first search.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="depth-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">depth</span>(<span class="ruby-identifier">sought_node</span>, <span class="ruby-identifier">current_node</span> =  <span class="ruby-ivar">@root</span>)
+  <span class="ruby-comment"># Base case we&#39;ve reached beyond a leaf node.</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">-1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># Base case: We&#39;ve reached the node.</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sought_node</span>
+
+  <span class="ruby-comment"># Otherwise, return the minimum of the depths</span>
+  <span class="ruby-value">1</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">depth</span>(<span class="ruby-identifier">sought_node</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>), <span class="ruby-identifier">depth</span>(<span class="ruby-identifier">sought_node</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)].<span class="ruby-identifier">max</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">(iter_method = &#39;&#39;, vals_only: true, &amp;block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <dl class="rdoc-list note-list"><dt><code>iter_method</code>
+<dd>
+<p>The method with which to iterate through.</p>
+</dd><dt><code>vals_only</code>
+<dd>
+<p>Whether or not the iteration should be of the values only or the nodes.</p>
+</dd><dt>+&amp;block+
+<dd>
+<p>The block to apply each node value.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>(<span class="ruby-identifier">iter_method</span> = <span class="ruby-string">&#39;&#39;</span>, <span class="ruby-value">vals_only:</span> <span class="ruby-keyword">true</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">order_arr</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">iter_method</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;inorder&#39;</span>
+                <span class="ruby-identifier">inorder</span>(<span class="ruby-value">vals_only:</span> <span class="ruby-identifier">vals_only</span>)
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;preorder&#39;</span>
+                <span class="ruby-identifier">preorder</span>(<span class="ruby-value">vals_only:</span> <span class="ruby-identifier">vals_only</span>)
+              <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;postorder&#39;</span>
+                <span class="ruby-identifier">postorder</span>(<span class="ruby-value">vals_only:</span> <span class="ruby-identifier">vals_only</span>)
+              <span class="ruby-keyword">else</span> <span class="ruby-comment"># Use level order.</span>
+                <span class="ruby-identifier">level_order</span>(<span class="ruby-value">vals_only:</span> <span class="ruby-identifier">vals_only</span>)
+              <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">order_arr</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">node_val</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">node_val</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>) }
+
+  <span class="ruby-comment"># Return the array used</span>
+  <span class="ruby-identifier">order_arr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(value, current_node = @root)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds and returns a node with <code>value</code> as its value. Returns nil if no such node exists in the tree.</p>
+<dl class="rdoc-list note-list"><dt><code>value</code>
+<dd>
+<p>The value that is sought.</p>
+</dd><dt><code>current_node</code>
+<dd>
+<p>The current node to compare <code>value</code> to.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span> = <span class="ruby-ivar">@root</span>)
+  <span class="ruby-comment"># Base case: We found the node or past a leaf node</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">current_node</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">value</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">value</span>
+
+  <span class="ruby-identifier">find</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-find_inorder_successor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_inorder_successor</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds the inorder sucessor of <code>node</code> by finding the node with the smallest value in the right subtree of <code>node</code>.</p>
+<dl class="rdoc-list note-list"><dt><code>node</code>
+<dd>
+<p>The node to find the inroder successor of.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="find_inorder_successor-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_inorder_successor</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">current_node</span> = <span class="ruby-identifier">node</span>
+  <span class="ruby-identifier">current_node</span> = <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">current_node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-height" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">height</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the height of <code>node</code>, or the number of edges in the longest path from <code>node</code> to a leaf node.</p>
+<dl class="rdoc-list note-list"><dt><code>node</code>
+<dd>
+<p>The node to find the height of.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="height-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">height</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-comment"># Base case: We&#39;ve reached past a leaf node (stop incrementing)</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">-1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># Otherwise, return the max of the left and right subtree heights.</span>
+  <span class="ruby-value">1</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">height</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">left</span>), <span class="ruby-identifier">height</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">right</span>)].<span class="ruby-identifier">max</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inorder" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inorder</span><span
+            class="method-args">(only_vals: true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of elements in the tree traversed using inorder. Acts as a wrapper for <a href="Tree.html#method-i-inorder_traverse"><code>inorder_traverse</code></a> to make the return array more flexible.</p>
+<dl class="rdoc-list note-list"><dt><code>only_vals</code>
+<dd>
+<p>returns an array of <a href="Node.html"><code>Node</code></a> values if <code>true</code>, otherwise it returns an array of <a href="Node.html"><code>Node</code></a> objects.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="inorder-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 236</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inorder</span>(<span class="ruby-value">only_vals:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">inorder_array</span> = <span class="ruby-identifier">inorder_traverse</span>.<span class="ruby-identifier">compact</span>
+  <span class="ruby-comment"># Return only values or array of node objects.</span>
+  <span class="ruby-identifier">only_vals</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">inorder_array</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:value</span>).<span class="ruby-identifier">compact</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">inorder_array</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inorder_traverse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inorder_traverse</span><span
+            class="method-args">(current_node = @root)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of elements using inorder.</p>
+<dl class="rdoc-list note-list"><dt><code>current_node</code>
+<dd>
+<p>The current node whose children are being looked at. This node is added to inorder_array after its left child.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="inorder_traverse-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inorder_traverse</span>(<span class="ruby-identifier">current_node</span> = <span class="ruby-ivar">@root</span>)
+  <span class="ruby-identifier">inorder_array</span> = []
+
+  <span class="ruby-comment"># Base case: reached child of a leaf node (nil)</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">inorder_array</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>)
+  <span class="ruby-identifier">inorder_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_node</span>
+  <span class="ruby-identifier">inorder_array</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">inorder_traverse</span>(<span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)
+
+  <span class="ruby-identifier">inorder_array</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert</span><span
+            class="method-args">(value, current_node = @root)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inserts a new node with <code>value</code> into its appropriate place in the tree. Returns <code>true</code> if insertion was successful and false if a node of that value already exists in the tree.</p>
+<dl class="rdoc-list note-list"><dt><code>value</code>
+<dd>
+<p>The value of the new node to insert.</p>
+</dd><dt><code>current_node</code>
+<dd>
+<p>The current node the method is looking at.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="insert-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span> = <span class="ruby-ivar">@root</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">value</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Node</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">0</span> <span class="ruby-comment"># Value already exists in the tree</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">-1</span> <span class="ruby-comment"># Left subtree</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">insert</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># Right subtree</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">insert</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-level_order" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">level_order</span><span
+            class="method-args">(only_vals: true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Shorthand warpper for <a href="Tree.html#method-i-level_order_iter"><code>level_order_iter</code></a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="level_order-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">level_order</span>(<span class="ruby-value">only_vals:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">level_order_iter</span>(<span class="ruby-value">only_vals:</span> <span class="ruby-identifier">only_vals</span>).<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-level_order_iter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">level_order_iter</span><span
+            class="method-args">(only_vals: true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of the nodes in level order iteratively.</p>
+<dl class="rdoc-list note-list"><dt><code>only_vals</code>
+<dd>
+<p>Return an array of just the values if true. Otherwise, return an array of <a href="Node.html"><code>Node</code></a> objects.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="level_order_iter-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">level_order_iter</span>(<span class="ruby-value">only_vals:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">level_order_array</span> = [<span class="ruby-ivar">@root</span>]
+  <span class="ruby-identifier">children_queue</span> = [<span class="ruby-ivar">@root</span>.<span class="ruby-identifier">left</span>, <span class="ruby-ivar">@root</span>.<span class="ruby-identifier">right</span>]
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">children_queue</span>.<span class="ruby-identifier">all?</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:nil?</span>)
+    <span class="ruby-comment"># Dequeue the next child</span>
+    <span class="ruby-identifier">current_node</span> = <span class="ruby-identifier">children_queue</span>.<span class="ruby-identifier">shift</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">nil?</span>
+
+    <span class="ruby-identifier">level_order_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_node</span>
+    <span class="ruby-comment"># Queue up the left and rode nodes as children</span>
+    <span class="ruby-identifier">children_queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>.<span class="ruby-identifier">nil?</span>
+
+    <span class="ruby-identifier">children_queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Return array of just the values if only_vals is true.</span>
+  <span class="ruby-identifier">only_vals</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">level_order_array</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:value</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">level_order_array</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-level_order_rec" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">level_order_rec</span><span
+            class="method-args">(level_order_array = [@root], children_queue = [@root.left, @root.right], only_vals: true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of the nodes in level order recursively.</p>
+<dl class="rdoc-list note-list"><dt><code>level_order_array</code>
+<dd>
+<p>The array of <a href="Node.html"><code>Node</code></a> objects to return.</p>
+</dd><dt><code>children_queue</code>
+<dd>
+<p>The queue of children who haven&#39;t been visited yet.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="level_order_rec-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">level_order_rec</span>(<span class="ruby-identifier">level_order_array</span> = [<span class="ruby-ivar">@root</span>],
+                    <span class="ruby-identifier">children_queue</span> = [<span class="ruby-ivar">@root</span>.<span class="ruby-identifier">left</span>, <span class="ruby-ivar">@root</span>.<span class="ruby-identifier">right</span>],
+                    <span class="ruby-value">only_vals:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">new_level_queue</span> = []
+  <span class="ruby-identifier">children_queue</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">nil?</span>
+
+    <span class="ruby-identifier">new_level_queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">left</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">left</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">new_level_queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">right</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">right</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">level_order_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Base case is the new_level_queue is all nil.</span>
+  <span class="ruby-identifier">level_order_rec</span>(<span class="ruby-identifier">level_order_array</span>, <span class="ruby-identifier">new_level_queue</span>, <span class="ruby-value">only_vals:</span> <span class="ruby-identifier">only_vals</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">new_level_queue</span>.<span class="ruby-identifier">all?</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:nil?</span>)
+
+  <span class="ruby-comment"># Return array of just the values if only_vals is true.</span>
+  <span class="ruby-identifier">only_vals</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">level_order_array</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:value</span>).<span class="ruby-identifier">compact</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">level_order_array</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-postorder" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">postorder</span><span
+            class="method-args">(only_vals: true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of elements in the tree traversed using postorder. Acts as a wrapper for <a href="Tree.html#method-i-postorder_traverse"><code>postorder_traverse</code></a> to make the return array more flexible.</p>
+<dl class="rdoc-list note-list"><dt><code>only_vals</code>
+<dd>
+<p>returns an array of <a href="Node.html"><code>Node</code></a> values if <code>true</code>, otherwise it returns an array of <a href="Node.html"><code>Node</code></a> objects.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="postorder-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 298</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">postorder</span>(<span class="ruby-value">only_vals:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">postorder_array</span> = <span class="ruby-identifier">postorder_traverse</span>
+  <span class="ruby-comment"># Return only values or array of node objects.</span>
+  <span class="ruby-identifier">only_vals</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">postorder_array</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:value</span>).<span class="ruby-identifier">compact</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">postorder_array</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-postorder_traverse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">postorder_traverse</span><span
+            class="method-args">(current_node = @root)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of elements using postorder.</p>
+<dl class="rdoc-list note-list"><dt><code>current_node</code>
+<dd>
+<p>The current node whose children are being looked at. This node is added to inorder_array after its children.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="postorder_traverse-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">postorder_traverse</span>(<span class="ruby-identifier">current_node</span> = <span class="ruby-ivar">@root</span>)
+  <span class="ruby-identifier">postorder_array</span> = []
+
+  <span class="ruby-comment"># Base case: reached child of a leaf node (nil)</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">postorder_array</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">postorder_traverse</span>(<span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>)
+  <span class="ruby-identifier">postorder_array</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">postorder_traverse</span>(<span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)
+  <span class="ruby-identifier">postorder_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_node</span>
+
+  <span class="ruby-identifier">postorder_array</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-preorder" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preorder</span><span
+            class="method-args">(only_vals: true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of elements in the tree traversed using preorder. Acts as a wrapper for <a href="Tree.html#method-i-preorder_traverse"><code>preorder_traverse</code></a> to make the return array more flexible.</p>
+<dl class="rdoc-list note-list"><dt><code>only_vals</code>
+<dd>
+<p>returns an array of <a href="Node.html"><code>Node</code></a> values if <code>true</code>, otherwise it returns an array of <a href="Node.html"><code>Node</code></a> objects.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="preorder-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 267</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">preorder</span>(<span class="ruby-value">only_vals:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">preorder_array</span> = <span class="ruby-identifier">preorder_traverse</span>.<span class="ruby-identifier">compact</span>
+  <span class="ruby-comment"># Return only values or array of node objects.</span>
+  <span class="ruby-identifier">only_vals</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">preorder_array</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:value</span>).<span class="ruby-identifier">compact</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">preorder_array</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-preorder_traverse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preorder_traverse</span><span
+            class="method-args">(current_node = @root)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an array of elements using preorder.</p>
+<dl class="rdoc-list note-list"><dt><code>current_node</code>
+<dd>
+<p>The current node whose children are being looked at. This node is added to inorder_array before its children.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="preorder_traverse-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">preorder_traverse</span>(<span class="ruby-identifier">current_node</span> = <span class="ruby-ivar">@root</span>)
+  <span class="ruby-identifier">preorder_array</span> = []
+
+  <span class="ruby-comment"># Base case: reached child of a leaf node (nil)</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">preorder_array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">current_node</span>
+  <span class="ruby-identifier">preorder_array</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">preorder_traverse</span>(<span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">left</span>)
+  <span class="ruby-identifier">preorder_array</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">preorder_traverse</span>(<span class="ruby-identifier">current_node</span>.<span class="ruby-identifier">right</span>)
+
+  <span class="ruby-identifier">preorder_array</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rebalance" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rebalance</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Balances an unbalanced tree.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="rebalance-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rebalance</span>
+  <span class="ruby-comment"># Short-circut if already balanced.</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@root</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">balanced?</span>
+
+  <span class="ruby-ivar">@root</span> = <span class="ruby-identifier">build_tree</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">inorder</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Alias for <a href="Tree.html#method-i-pretty_print"><code>pretty_print</code></a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-identifier">pretty_print</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-build_tree" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_tree</span><span
+            class="method-args">(sorted_array)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Builds a binary search tree using values in a sorted array.</p>
+<dl class="rdoc-list note-list"><dt><code>sorted_array</code>
+<dd>
+<p>A sorted array to turn into a BST.</p>
+</dd></dl>
+          
+          
+
+          
+          <div class="method-source-code" id="build_tree-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 369</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_tree</span>(<span class="ruby-identifier">sorted_array</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sorted_array</span>[<span class="ruby-value">0</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">sorted_array</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">1</span>
+
+  <span class="ruby-identifier">midpoint</span> = <span class="ruby-identifier">sorted_array</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">subtree_root</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sorted_array</span>[<span class="ruby-identifier">midpoint</span>])
+  <span class="ruby-comment"># Don&#39;t include the root in the left subtree.</span>
+  <span class="ruby-identifier">subtree_root</span>.<span class="ruby-identifier">left</span> = <span class="ruby-identifier">build_tree</span>(<span class="ruby-identifier">sorted_array</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">sorted_array</span>.<span class="ruby-identifier">length</span>.<span class="ruby-identifier">even?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">midpoint</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">midpoint</span>)])
+  <span class="ruby-identifier">subtree_root</span>.<span class="ruby-identifier">right</span> = <span class="ruby-identifier">build_tree</span>(<span class="ruby-identifier">sorted_array</span>[<span class="ruby-identifier">midpoint</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span><span class="ruby-operator">..</span>])
+
+  <span class="ruby-identifier">subtree_root</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pretty_print" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pretty_print</span><span
+            class="method-args">(node = @root, prefix = &#39;&#39;, is_left = true)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Visualization of the binary tree, written by a community member of The Odin Project. Mainly used for debugging, so the spec file doesn&#39;t include any tests for this.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="pretty_print-source">
+            <pre><span class="ruby-comment"># File lib/tree.rb, line 359</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_print</span>(<span class="ruby-identifier">node</span> = <span class="ruby-ivar">@root</span>, <span class="ruby-identifier">prefix</span> = <span class="ruby-string">&#39;&#39;</span>, <span class="ruby-identifier">is_left</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">pretty_print</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">right</span>, <span class="ruby-node">&quot;#{prefix}#{is_left ? &#39;│   &#39; : &#39;    &#39;}&quot;</span>, <span class="ruby-keyword">false</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">right</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{prefix}#{is_left ? &#39;└── &#39; : &#39;┌── &#39;}#{node.value}&quot;</span>
+  <span class="ruby-identifier">pretty_print</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">left</span>, <span class="ruby-node">&quot;#{prefix}#{is_left ? &#39;    &#39; : &#39;│   &#39;}&quot;</span>, <span class="ruby-keyword">true</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">left</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
