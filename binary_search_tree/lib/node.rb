@@ -28,16 +28,6 @@ class Node
   end
 
   ##
-  # Calculates and returns the number of children the node has
-  def num_children
-    if @left.nil?
-      1
-    else
-      0 + @right.nil? ? 1 : 0
-    end
-  end
-
-  ##
   # Assigns the left child unless +other+ is not a Node object or nil.
   def left=(other)
     raise TypeError, 'Left must be a node or nil.' unless other.is_a?(Node) || other.nil?
