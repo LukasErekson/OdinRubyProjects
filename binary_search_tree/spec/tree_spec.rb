@@ -296,7 +296,7 @@ RSpec.describe Tree, 'Binary Search Tree' do
     end
   end
 
-  context '#rebalance' do
+  context '#rebalance!' do
     my_tree = Tree.new([1, 2, 3, 4, 5, 6, 7])
     my_tree2 = Tree.new([1, 2, 3])
     my_tree2.insert(4)
@@ -304,16 +304,16 @@ RSpec.describe Tree, 'Binary Search Tree' do
 
     it 'returns root for a balanced tree' do
       pre_balanced_root = my_tree.root
-      expect(my_tree.rebalance).to eq(pre_balanced_root)
+      expect(my_tree.rebalance!).to eq(pre_balanced_root)
     end
 
     it 'balances an unbalanced tree' do
-      my_tree2.rebalance
+      my_tree2.rebalance!
       expect(my_tree2.balanced?).to eq(true)
     end
 
     it 'returns correct root after balancing tree' do
-      new_root = my_tree2.rebalance
+      new_root = my_tree2.rebalance!
       expect(new_root).to eq(Node.new(3))
     end
   end
