@@ -163,7 +163,7 @@ class Tree
 
   ##
   # Balances an unbalanced tree.
-  def rebalance
+  def rebalance!
     # Short-circut if already balanced.
     return @root if balanced?
 
@@ -173,7 +173,7 @@ class Tree
   ##
   # Shorthand warpper for level_order_iter
   def level_order(only_vals: true)
-    level_order_iter(only_vals: only_vals).compact
+    level_order_iter(only_vals: only_vals)
   end
 
   ##
@@ -221,7 +221,7 @@ class Tree
     level_order_rec(level_order_array, new_level_queue, only_vals: only_vals) unless new_level_queue.all?(&:nil?)
 
     # Return array of just the values if only_vals is true.
-    only_vals ? level_order_array.map(&:value).compact : level_order_array.compact
+    only_vals ? level_order_array.map(&:value) : level_order_array
   end
 
   ##
@@ -232,9 +232,9 @@ class Tree
   # +only_vals+:: returns an array of Node values if +true+, otherwise it
   #               returns an array of Node objects.
   def inorder(only_vals: true)
-    inorder_array = inorder_traverse.compact
+    inorder_array = inorder_traverse
     # Return only values or array of node objects.
-    only_vals ? inorder_array.map(&:value).compact : inorder_array.compact
+    only_vals ? inorder_array.map(&:value) : inorder_array
   end
 
   ##
@@ -263,9 +263,9 @@ class Tree
   # +only_vals+:: returns an array of Node values if +true+, otherwise it
   #               returns an array of Node objects.
   def preorder(only_vals: true)
-    preorder_array = preorder_traverse.compact
+    preorder_array = preorder_traverse
     # Return only values or array of node objects.
-    only_vals ? preorder_array.map(&:value).compact : preorder_array.compact
+    only_vals ? preorder_array.map(&:value) : preorder_array
   end
 
   ##
@@ -296,7 +296,7 @@ class Tree
   def postorder(only_vals: true)
     postorder_array = postorder_traverse
     # Return only values or array of node objects.
-    only_vals ? postorder_array.map(&:value).compact : postorder_array.compact
+    only_vals ? postorder_array.map(&:value) : postorder_array
   end
 
   ##
@@ -365,13 +365,15 @@ class Tree
   #
   # +sorted_array+:: A sorted array to turn into a BST.
   def build_tree(sorted_array)
-    return Node.new(sorted_array[0]) if sorted_array.length <= 1
+    return if sorted_array.length.zero?
 
-    midpoint = sorted_array.length / 2
+    return Node.new(sorted_array[0]) if sorted_array.length == 1
+
+    midpoint = (sorted_array.length - 1) / 2
     subtree_root = Node.new(sorted_array[midpoint])
     # Don't include the root in the left subtree.
-    subtree_root.left = build_tree(sorted_array[0...(sorted_array.length.even? ? midpoint - 1 : midpoint)])
-    subtree_root.right = build_tree(sorted_array[midpoint + 1..])
+    subtree_root.left = build_tree(sorted_array[0...midpoint])
+    subtree_root.right = build_tree(sorted_array[midpoint + 1..-1])
 
     subtree_root
   end
