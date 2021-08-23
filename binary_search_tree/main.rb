@@ -29,7 +29,7 @@ puts "The new tree is balanced: #{my_tree.balanced?}"
 
 puts 'Call rebalance'
 
-my_tree.rebalance
+my_tree.rebalance!
 
 puts my_tree
 
