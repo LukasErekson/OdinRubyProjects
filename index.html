@@ -70,11 +70,11 @@
         <div class="row">
           <div class="col">
             <p>
-              This is a compilation of all the exercises and projects I've done as part of <a href="https://www.TheOdinProject.com" target="_blank">The Odin Project</a>'s Ruby Basics course. The repository contains all my solutions to the regular ruby exercises, but I'm particularly proud of my work on the projects.
+              This is a compilation of all the exercises and projects I've done as part of <a href="https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-programming" target="_blank">The Odin Project's Ruby Programming course</a>. The repository contains all my solutions to the regular ruby exercises, but I'm particularly proud of my work on the projects.
             </p>
 
             <p>
-              The pages on this website will primarily focus on the important concepts I learned during the projects rather than the projects themselves. If you're interested in understanding the initial requirements for the project, specific links will be provided on each project page.
+              This page is a reflection on the important concepts I learned during the projects rather than the details of the projects themselves. The source code can be found <a href="https://github.com/lukaserekson/OdinRubyProjects">on my GitHub.</a>
             </p>
 
             <p>
@@ -96,7 +96,7 @@
         </p>
         
         <p>
-          Of the three, Mastermind is my favorite. I was able to use a gem that allowed for colored output, and I feel like I handled errors and exceptions well. I also implemented a basic algorithm that allows the player to input a code and the computer to "guess" their code. More details about the algorithm implementation is <a href="#data-structures">available below</a>. Feel free to play a couple of rounds of the game by <a href="">clicking here</a>.
+          Of the three, Mastermind is my favorite. I was able to use a gem that allowed for colored output, and I feel like I handled errors and exceptions well. I also implemented a basic algorithm that allows the player to input a code and the computer to "guess" their code. Feel free to play a couple of rounds of the game by <a href="https://replit.com/@LukasErekson/TOP-Mastermind#main.rb" target="_blank">clicking here</a>.
         </p>
         
       </div>
@@ -109,19 +109,26 @@
         </header>
         
         <p>
-          Using the spec files provided for the exercises and looking up the documentation, I started to create RSpec test files for most of the projects. I wanted to practice writing unit tests and try RSpec's "behavior driven development" methodology. My previous experience with Python during my undergraduate research (see <a href="">Rootfinding</a>) instilled in me the importance of creating and using unit tests. I created my own unit tests for Substrings, Stock Picker, Bubble Sort, Custom Enumerable, the Recursion exercises, and Linked List.
+          Using the spec files provided for the exercises and looking up the documentation, I started to create RSpec test files for most of the projects. I wanted to practice writing unit tests and try RSpec's "behavior driven development" methodology. My previous experience with Python during my undergraduate research (see <a href="">my Rootfinding fork</a>) instilled in me the importance of creating and using unit tests. I created my own unit tests for Substrings, Stock Picker, Bubble Sort, Custom Enumerable, the Recursion exercises, Linked List, and Binary Search Tree.
         </p>
         
         <p>
-          Out of them all, I'm most proud of the work I did with Linked List. It was the first project that I really implemented what I knew of Test-Driven Development. I wrote out the spec file that tested for the specific behaviors and outputs for my <tt>LinkedList</tt> class before implementing any of the methods. Doing so gave me not only a clear end-goal, but it also helped me identify errors when handling the edge cases that I may not have caught otherwise. Additionally, I started to learn a little bit about generating documentation using RDoc. You can find the source code for the classes and the spec files <a href="https://github.com/LukasErekson/OdinRubyProjects/tree/main/linked_list">by clicking here</a>. If you're interested in browsing the generated documentation, that can be found <a href="">here</a>.
+          Out of them all, I'm most proud of the work I did with Linked List. It was the first project that I really implemented what I knew of Test-Driven Development. I wrote out the spec file that tested for the specific behaviors and outputs for my <tt>LinkedList</tt> class before implementing any of the methods. Doing so gave me not only a clear end-goal, but it also helped me identify errors when handling the edge cases that I may not have caught otherwise. I had a similar experience when implementing the BInary Search Tree project.
+        </p>
+        <p>
+          Additionally, I started to learn a little bit about generating documentation using RDoc. You can find the source code for the classes and the spec files <a href="https://github.com/LukasErekson/OdinRubyProjects/tree/main/linked_list">by clicking here</a>. If you're interested in browsing the generated documentation, that can be found <a href="./linked_list/doc/index.html">here</a>.
         </p>
       </div>
       
       <div class="container" id="data-structures">
         <header>
           <h1>Data Structures & Algorithms</h1>
-          <h5>Implementing algorithms - from psuedo code to Ruby</h5>
+          <h5>Implementing algorithms - from pseudocode to Ruby</h5>
         </header>
+
+        <p>
+          The Odin Project provided me with several opportunities to implement algorithms from pseudocode. For instance, my <tt>Mastermind</tt> implementation includes an algorithm that allows the program to systematically determine the user's secret code. The sections on recursion, including the Binary Search Tree, also gave me a lot of opportunity to consider carefully how to translate an abstract structure and algorithm into clean, usable code.
+        </p>
       </div>
       
     </content>
