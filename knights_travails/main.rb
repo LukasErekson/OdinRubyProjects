@@ -9,13 +9,21 @@ KNIGHT_MOVES_DELTA = [1, -1, 2, -2].permutation(2).reject { |n| n.sum.zero? }
 # +initial_space+::   The starting space of the knight.
 # +target_space+::    The desired end space goal.
 def knight_moves(initial_space, target_space)
+  unless valid_space?(initial_space) && valid_space?(target_space)
+    puts 'Please ensure that initial space and target space are valid board positions'
+    puts 'Choose any point from (0..7) x (0..7).'
+    return nil
+  end
   path = find_knight_path(initial_space, target_space)
 
-  puts "You got from #{initial_space} to #{target_space} in #{path.length - 1} moves!"
-
+  puts "You got from #{initial_space} to #{target_space} in #{path.length - 1} move#{(path.length - 1) == 1 ? '' : 's'}!"
   puts 'Here is your path:'
+  puts "\t  #{initial_space}"
+
   path.each do |space|
-    puts "\t#{space}"
+    next if space == path.first
+
+    puts "\t↪ #{space}"
   end
 end
 
@@ -26,10 +34,11 @@ end
 # +initial_space+::   The starting space of the knight.
 # +target_space+::    The desired end space goal.
 def find_knight_path(initial_space, target_space)
-  return [initial_space] if initial_space == target_space
+  paths = [[initial_space]]
+  return paths[0] if initial_space == target_space
 
-  paths = valid_knight_moves(initial_space).map { |move| [initial_space, move] }
-  # Since this problem is guarenteed to have a solution,
+  # paths = valid_knight_moves(initial_space).map { |move| [initial_space, move] }
+  # Since this problem is guaranteed to have a solution,
   # it will eventually terminate.
   # See https://en.wikipedia.org/wiki/Knight%27s_tour
   loop do
@@ -60,6 +69,8 @@ def valid_knight_moves(current_space)
     test_space = [x + delta_x, y + delta_y]
     accumulator << test_space if valid_space?(test_space)
   end
+
+  valid_spaces
 end
 
 ##
@@ -71,3 +82,5 @@ def valid_space?(space)
 end
 
 knight_moves([0, 0], [7, 7])
+
+knight_moves([0, 0], [1, 2])
