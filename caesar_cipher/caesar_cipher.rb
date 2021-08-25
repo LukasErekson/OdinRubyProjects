@@ -3,6 +3,7 @@
 ##
 # Shifts each given character by +shift_factor+, looping around where
 # necessary and maintaining capitalization.
+# Note: This only works for the English alphabet: A-Z and a-z.
 #
 # +char+::	The character to shift.
 # +shift+::	The number of characters to shift +char+ by.
