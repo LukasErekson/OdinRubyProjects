@@ -99,4 +99,79 @@ RSpec.describe '#valid_knight_moves' do
 end
 
 RSpec.describe '#find_knight_path' do
+  context 'given the same starting and ending space' do
+    it 'returns just the starting space' do
+      expect(find_knight_path([0, 0], [0, 0])).to eq([[0, 0]])
+    end
+  end
+
+  context 'given 1 space away' do
+    it 'returns a path length 1 for [0, 0] to [1, 2]' do
+      expect(find_knight_path([0, 0], [1, 2]).length).to eq(2)
+    end
+
+    it 'returns a path of length 1 for [1, 2] to [0, 4]' do
+      expect(find_knight_path([1, 2], [0, 4]).length).to eq(2)
+    end
+  end
+
+  context 'traveling diagonally from corner to corner' do
+    it 'returns a path length of 6' do
+      corners = [[[0, 0], [7, 7]], [[0, 7], [7, 0]]]
+      corners.each do |corner_pair|
+        # Opposite corners traversed both ways
+        expect(find_knight_path(corner_pair[0], corner_pair[1]).length).to eq(7)
+        expect(find_knight_path(corner_pair[1], corner_pair[0]).length).to eq(7)
+      end
+    end
+  end
+
+  context 'traveling along the edges from corner to corner' do
+    it 'returns a path length of 5' do
+      corners = [[[0, 0], [0, 7]], [[0, 0], [7, 0]],
+                 [[0, 7], [7, 7]], [[7, 0], [7, 7]]]
+      corners.each do |corner_pair|
+        # Corner to corner traversed both ways
+        expect(find_knight_path(corner_pair[0], corner_pair[1]).length).to eq(6)
+        expect(find_knight_path(corner_pair[1], corner_pair[0]).length).to eq(6)
+      end
+    end
+  end
+end
+
+RSpec.describe '#knight_moves' do
+  context 'given valid inputs' do
+    it 'prints the path from [0, 0] to [1, 2]' do
+      expect do
+        knight_moves([0, 0], [1, 2])
+      end.to output("You got from [0, 0] to [1, 2] in 1 move!\nHere is your path:\n\t  [0, 0]\n\t↪ [1, 2]\n").to_stdout
+    end
+
+    it 'prints the path from [0, 0] to [5, 6]' do
+      expect do
+        knight_moves([0, 0], [5, 6])
+      end.to output("You got from [0, 0] to [5, 6] in 5 moves!
+Here is your path:\n\t  [0, 0]\n\t↪ [1, 2]\n\t↪ [2, 4]\n\t↪ [3, 6]\n\t↪ [4, 4]\n\t↪ [5, 6]\n").to_stdout
+    end
+  end
+
+  context 'given invalid inputs' do
+    it 'returns nil for invalid target space' do
+      expect(knight_moves([0, 0], [-1, 2])).to eq(nil)
+    end
+
+    it 'returns nil for invalid initial space' do
+      expect(knight_moves([-1, -1], [1, 2])).to eq(nil)
+    end
+
+    it 'returns nil if both spaces are invalid' do
+      expect(knight_moves([-1, 0], [10, 1])).to eq(nil)
+    end
+
+    it 'outputs error message' do
+      expect do
+        knight_moves([-1, 0], [0, 0])
+      end.to output("Please ensure that initial space and target space are valid board positions\nChoose any point from (0..7) x (0..7).\n").to_stdout
+    end
+  end
 end
