@@ -17,7 +17,7 @@ def shift_char(char, shift)
     shifted_char_num += shift
     shifted_char_num -= 26 if shifted_char_num > 122
   end
-  shfited_char_num.chr
+  shifted_char_num.chr
 end
 
 ##
@@ -38,7 +38,7 @@ def caesar_cipher(message, shift_factor)
 
   # Terminate early if shift does nothing.
   if shift.zero?
-    puts "The ciphertext is identical to the message. (#{shift_factor} % 26 == 0)"
+    warn "The ciphertext is identical to the message. (#{shift_factor} % 26 == 0)"
     return message
   end
   cipher = ''
