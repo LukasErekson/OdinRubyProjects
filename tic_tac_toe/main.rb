@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative 'player'
-require_relative 'board_slot'
-require_relative 'tic_tac_toe'
+require_relative './lib/player'
+require_relative './lib/board_slot'
+require_relative './lib/tic_tac_toe'
 
 tic_tac_toe = TicTacToe.new
 
@@ -13,7 +13,8 @@ until %w[exit quit q no].include? user_input
   break if winner == -1
 
   puts "#{winner} wins! Play again?"
-  user_input = gets.chomp
+  puts 'Yes: any key  No: exit, quit, or no'
+  user_input = gets.chomp.downcase
 end
 
 puts 'Have a nice day!'
