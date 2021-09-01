@@ -9,11 +9,11 @@
 class Player
   attr_reader :name, :token, :score
 
-  DEFAULT_TOKENS = %w[⚪, ⚫].freeze
+  DEFAULT_TOKENS = %w[☺ ☻].freeze
 
   ##
   # Initialize instance variables.
-  def initialize(name = 'Player', token = '⚪')
+  def initialize(name = 'Player', token = '☺')
     raise StandardError('Name must be a string object') unless name.is_a? String
     raise StandardError('Token must be a string object') unless token.is_a? String
     raise StandardError('Token cannot be "O"') if token == 'O'

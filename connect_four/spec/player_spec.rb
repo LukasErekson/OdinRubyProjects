@@ -35,7 +35,7 @@ RSpec.describe Player do
 
   describe '#to_s' do
     it 'returns name, token, and score' do
-      expect(player.to_s).to eq('Player (⚪): 0')
+      expect(player.to_s).to eq('Player (☺): 0')
     end
   end
 end
